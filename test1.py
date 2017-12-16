@@ -1,4 +1,4 @@
-greet_bot = BotHandler(token)  
+greet_bot = BotHandler(491041391:AAGIzd86W4mPZDAgLRwZcweXmGDkVAJacRE)  
 greetings = ('здравствуй', 'привет', 'ку', 'здорово')  
 now = datetime.datetime.now()
 
