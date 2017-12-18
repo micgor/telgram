@@ -4,13 +4,13 @@ import os
 
 server = Flask(__name__)
 TOKEN  = 'token'
-bot = telebot.TeleBot('491041391:AAGIzd86W4mPZDAgLRwZcweXmGDkVAJacRE') #тут мой токен
+bot = telebot.TeleBot('491041391:AAGIzd86W4mPZDAgLRwZcweXmGDkVAJacRE')
 port = int(os.environ.get("PORT", 5000))
 
 @server.route('/')
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://myapp/bot") #ссылку изменил
+    bot.set_webhook(url="https://glacial-peak-27915.herokuapp.com" + TOKEN)
     return "!", 200
 
 @server.route("/bot", methods=['POST'])
