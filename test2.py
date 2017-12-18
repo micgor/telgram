@@ -10,7 +10,7 @@ port = int(os.environ.get("PORT", 5000))
 @server.route('/')
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://glacial-peak-27915.herokuapp.com/" + TOKEN + "/")
+    bot.set_webhook(url="https://glacial-peak-27915.herokuapp.com/")
     return "!", 200
 
 @server.route("/bot", methods=['POST'])
