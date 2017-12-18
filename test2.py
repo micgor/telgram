@@ -10,14 +10,14 @@ port = int(os.environ.get("PORT", 5000))
 @server.route('/')
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://glacial-peak-27915.herokuapp.com")
+    bot.set_webhook(url="https://glacial-peak-27915.herokuapp.com/" + TOKEN)
     return "!", 200
 
-@server.route("/bot", methods=['POST'])
+@server.route("/" + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_messages(
         [telebot.types.Update.de_json(request.stream.read().decode("utf-8")).message])
-    return "ok", 200
+    return "!", 200
 
 @bot.message_handler()
 def start(message):
