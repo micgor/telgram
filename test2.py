@@ -1,4 +1,5 @@
 from flask import Flask, request
+import datetime
 import telebot
 import os
 
@@ -21,6 +22,7 @@ def getMessage():
 
 @bot.message_handler()
 def start(message):
-    bot.send_message(message.chat.id, "Hi")
+    today = datetime.datetime.today()
+    bot.send_message(message.chat.id, today.strftime("%d.%m.%Y %H:%M"))
 
 server.run(host='0.0.0.0', port=port)
