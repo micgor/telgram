@@ -23,8 +23,10 @@ def getMessage():
 @bot.message_handler()
 def start(message):
     today = datetime.datetime.today()
+    response = requests.get('https://httpbin.org/get')
+    bot.send_message(message.chat.id, response.content)
     #bot.send_message(message.chat.id, today.strftime("%d.%m.%Y %H:%M"))
-    bot.send_message(message.chat.id, '15.2')
+    #bot.send_message(message.chat.id, '15.2')
 
 server.run(host='0.0.0.0', port=port)
 
