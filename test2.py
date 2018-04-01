@@ -24,7 +24,7 @@ def getMessage():
 @bot.message_handler()
 def start(message):
     today = datetime.datetime.today()
-    response = requests.get('https://httpbin.org/get')
+    response = requests.get('http://82.103.134.7/r.php')
     bot.send_message(message.chat.id, response.content)
     #bot.send_message(message.chat.id, today.strftime("%d.%m.%Y %H:%M"))
     #bot.send_message(message.chat.id, '15.2')
